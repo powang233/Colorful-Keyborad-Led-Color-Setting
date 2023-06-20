@@ -65,62 +65,73 @@ namespace ColorfulLedKeyboardSet
         int r = 255;
         int g = 0;
         int b = 0;
+
+        int GC=100;
+
         Thread LoopThread;
         private void RGBLoop()
         {
+            
             while (true)
             {
+                
                 if (!(g == 255 && r == 0 && b == 255))
                 {
-                    for (; g < 255; g += speedBar.Value)
+                    for (; g < 255; g += speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     g = g > 255 ? g = 255 : g;
-                    for (; r > 0; r -= speedBar.Value)
+                    for (; r > 0; r -= speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     r = r < 0 ? r = 0 : r;
-                    for (; b < 255; b += speedBar.Value)
+                    for (; b < 255; b += speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     b = b > 255 ? b = 255 : b;
                 }
                 else
                 {
-                    for (; g > 0; g -= speedBar.Value)
+                    for (; g > 0; g -= speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     g = g < 0 ? g = 0 : g;
-                    for (; r < 255; r += speedBar.Value)
+                    for (; r < 255; r += speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     r = r > 255 ? r = 255 : r;
-                    for (; b > 0; b -= speedBar.Value)
+                    for (; b > 0; b -= speedBar.Value + speedBar.Value * GC / 15)
                     {
 
                         SetColor(1, Color.FromArgb(r, g, b));
                         SetColor(2, Color.FromArgb(r, g, b));
                         SetColor(3, Color.FromArgb(r, g, b));
+                        System.Threading.Thread.Sleep(GC);
                     }
                     b = b < 0 ? b = 0 : b;
                 }
