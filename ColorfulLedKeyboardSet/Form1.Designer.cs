@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.speedBar = new System.Windows.Forms.TrackBar();
@@ -36,13 +37,15 @@
             this.information_B = new System.Windows.Forms.Button();
             this.ColorTestLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.speedBar)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(9, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 27);
             this.button1.TabIndex = 0;
@@ -54,7 +57,7 @@
             // 
             this.speedBar.LargeChange = 7;
             this.speedBar.Location = new System.Drawing.Point(148, 4);
-            this.speedBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.speedBar.Margin = new System.Windows.Forms.Padding(2);
             this.speedBar.Maximum = 7;
             this.speedBar.Minimum = 1;
             this.speedBar.Name = "speedBar";
@@ -65,7 +68,7 @@
             // CustomRGB_B
             // 
             this.CustomRGB_B.Location = new System.Drawing.Point(9, 54);
-            this.CustomRGB_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CustomRGB_B.Margin = new System.Windows.Forms.Padding(2);
             this.CustomRGB_B.Name = "CustomRGB_B";
             this.CustomRGB_B.Size = new System.Drawing.Size(73, 27);
             this.CustomRGB_B.TabIndex = 2;
@@ -88,7 +91,7 @@
             // information_B
             // 
             this.information_B.Location = new System.Drawing.Point(148, 54);
-            this.information_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.information_B.Margin = new System.Windows.Forms.Padding(2);
             this.information_B.Name = "information_B";
             this.information_B.Size = new System.Drawing.Size(73, 27);
             this.information_B.TabIndex = 4;
@@ -109,7 +112,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(82, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 27);
             this.button2.TabIndex = 6;
@@ -117,11 +120,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(87, 54);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(56, 27);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "托盘";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 91);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ColorTestLabel);
             this.Controls.Add(this.information_B);
@@ -129,7 +149,7 @@
             this.Controls.Add(this.CustomRGB_B);
             this.Controls.Add(this.speedBar);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "欢迎使用-作者墨水";
@@ -150,6 +170,8 @@
         private System.Windows.Forms.Button information_B;
         private System.Windows.Forms.Label ColorTestLabel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

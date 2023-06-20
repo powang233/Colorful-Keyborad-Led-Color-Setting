@@ -145,6 +145,18 @@ namespace ColorfulLedKeyboardSet
             //MessageBox.Show("此程序为墨水制作\r\n利用逆向手段获取API编写而成\r\n有任何硬件问题开发者不承担任何责任！", "免责声明");
             button2.Enabled = false;
 
+
+            //this.notifyIcon = new NotifyIcon();
+
+            this.notifyIcon1.BalloonTipText = "RGB循环";
+            this.notifyIcon1.ShowBalloonTip(2000);
+            this.notifyIcon1.Text = "RGB循环";
+            this.notifyIcon1.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            
+
+            WindowState = FormWindowState.Minimized;// 最小化到系统托盘
+            this.ShowInTaskbar = false;
+
             speedBar.Value = sudu;
 
             LoopThread = new Thread(new ThreadStart(() => this.RGBLoop()));
@@ -154,6 +166,21 @@ namespace ColorfulLedKeyboardSet
             button2.Enabled = true;
 
         }
+
+        
+
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //MessageBox.Show("aaa ?");
+            this.Activate();
+            this.Visible = true;//
+            this.WindowState = FormWindowState.Normal;//窗口正常显示
+            this.ShowInTaskbar = true;//在任务栏中显示该窗口
+            
+        }
+
+        
 
         private void CustomRGB_B_Click(object sender, EventArgs e)
         {
@@ -168,6 +195,7 @@ namespace ColorfulLedKeyboardSet
                 SetColor(3, colorDialog1.Color);
             }
         }
+
 
         private void information_B_Click(object sender, EventArgs e)
         {
@@ -190,6 +218,12 @@ namespace ColorfulLedKeyboardSet
         private void GetSource_L_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/moshuiD/Colorful-Keyborad-Led-Color-Setting");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;// 最小化到系统托盘
+            this.ShowInTaskbar = false;
         }
     }
 }
