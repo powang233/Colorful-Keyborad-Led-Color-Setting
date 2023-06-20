@@ -14,15 +14,19 @@ using System.Windows.Forms;
 
 namespace ColorfulLedKeyboardSet
 {
+    
     public partial class Form1 : Form
     {
         [DllImport("InsydeDCHU.dll")]
         public static extern int SetDCHU_Data(int command, byte[] buffer, int length);
 
-        public Form1()
+        int sudu=1;
+        public Form1(string[] args)
         {
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
+            if (args.Length == 1) if (1 <= int.Parse(args[0]) & int.Parse(args[0]) <= 7) sudu = int.Parse(args[0]); else MessageBox.Show("速度参数应在1到7之间");
+
         }
 
         public void SetColor(int KbPart, Color _color)
@@ -138,8 +142,17 @@ namespace ColorfulLedKeyboardSet
                 MessageBox.Show("发生错误:InsydeDCHU.dll缺失\r\n，请检查程序运行文件夹下是否有InsydeDCHU.dll", "发生错误");
                 Environment.Exit(0);
             }
-            MessageBox.Show("此程序为墨水制作\r\n利用逆向手段获取API编写而成\r\n有任何硬件问题开发者不承担任何责任！", "免责声明");
+            //MessageBox.Show("此程序为墨水制作\r\n利用逆向手段获取API编写而成\r\n有任何硬件问题开发者不承担任何责任！", "免责声明");
             button2.Enabled = false;
+
+            speedBar.Value = sudu;
+
+            LoopThread = new Thread(new ThreadStart(() => this.RGBLoop()));
+            LoopThread.IsBackground = true;
+            LoopThread.Start();
+            button1.Enabled = false;
+            button2.Enabled = true;
+
         }
 
         private void CustomRGB_B_Click(object sender, EventArgs e)

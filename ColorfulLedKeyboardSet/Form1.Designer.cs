@@ -41,9 +41,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(9, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 34);
+            this.button1.Size = new System.Drawing.Size(62, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "RGB循环";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,19 +53,21 @@
             // speedBar
             // 
             this.speedBar.LargeChange = 7;
-            this.speedBar.Location = new System.Drawing.Point(198, 5);
+            this.speedBar.Location = new System.Drawing.Point(148, 4);
+            this.speedBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.speedBar.Maximum = 7;
             this.speedBar.Minimum = 1;
             this.speedBar.Name = "speedBar";
-            this.speedBar.Size = new System.Drawing.Size(113, 56);
+            this.speedBar.Size = new System.Drawing.Size(85, 45);
             this.speedBar.TabIndex = 1;
             this.speedBar.Value = 1;
             // 
             // CustomRGB_B
             // 
-            this.CustomRGB_B.Location = new System.Drawing.Point(12, 67);
+            this.CustomRGB_B.Location = new System.Drawing.Point(9, 54);
+            this.CustomRGB_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CustomRGB_B.Name = "CustomRGB_B";
-            this.CustomRGB_B.Size = new System.Drawing.Size(97, 34);
+            this.CustomRGB_B.Size = new System.Drawing.Size(73, 27);
             this.CustomRGB_B.TabIndex = 2;
             this.CustomRGB_B.Text = "自定义RGB";
             this.CustomRGB_B.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // GetSource_L
             // 
             this.GetSource_L.AutoSize = true;
-            this.GetSource_L.Location = new System.Drawing.Point(317, 77);
+            this.GetSource_L.Location = new System.Drawing.Point(238, 62);
+            this.GetSource_L.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.GetSource_L.Name = "GetSource_L";
-            this.GetSource_L.Size = new System.Drawing.Size(97, 15);
+            this.GetSource_L.Size = new System.Drawing.Size(77, 12);
             this.GetSource_L.TabIndex = 3;
             this.GetSource_L.TabStop = true;
             this.GetSource_L.Text = "获取程序源码";
@@ -83,9 +87,10 @@
             // 
             // information_B
             // 
-            this.information_B.Location = new System.Drawing.Point(198, 68);
+            this.information_B.Location = new System.Drawing.Point(148, 54);
+            this.information_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.information_B.Name = "information_B";
-            this.information_B.Size = new System.Drawing.Size(97, 34);
+            this.information_B.Size = new System.Drawing.Size(73, 27);
             this.information_B.TabIndex = 4;
             this.information_B.Text = "关于程序";
             this.information_B.UseVisualStyleBackColor = true;
@@ -94,17 +99,19 @@
             // ColorTestLabel
             // 
             this.ColorTestLabel.AutoSize = true;
-            this.ColorTestLabel.Location = new System.Drawing.Point(317, 22);
+            this.ColorTestLabel.Location = new System.Drawing.Point(238, 18);
+            this.ColorTestLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ColorTestLabel.Name = "ColorTestLabel";
-            this.ColorTestLabel.Size = new System.Drawing.Size(97, 15);
+            this.ColorTestLabel.Size = new System.Drawing.Size(77, 12);
             this.ColorTestLabel.TabIndex = 5;
             this.ColorTestLabel.Text = "您的键盘颜色";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(110, 12);
+            this.button2.Location = new System.Drawing.Point(82, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 34);
+            this.button2.Size = new System.Drawing.Size(62, 27);
             this.button2.TabIndex = 6;
             this.button2.Text = "停止循环";
             this.button2.UseVisualStyleBackColor = true;
@@ -112,9 +119,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 114);
+            this.ClientSize = new System.Drawing.Size(320, 91);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ColorTestLabel);
             this.Controls.Add(this.information_B);
@@ -122,6 +129,7 @@
             this.Controls.Add(this.CustomRGB_B);
             this.Controls.Add(this.speedBar);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "欢迎使用-作者墨水";
